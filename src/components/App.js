@@ -30,8 +30,11 @@ function App () {
 
   return (
     <div>
+      <header>
       <h1>Frases de Friends</h1>
+      </header>
       <section>
+        <form>
         <label htmlFor="phraseFilter">Filtrar por frase:</label>
         <input
           type="text"
@@ -39,8 +42,10 @@ function App () {
           value={phraseFilter}
           onChange={handleInputPhrase }
         />
+        </form>
       </section>
       <section>
+        <form>
         <label htmlFor="characterFilter">Filtrar pot personaje:</label>
         <select
           id="characterFilter"
@@ -55,12 +60,16 @@ function App () {
           <option value="Chandler">Chandler</option>
           <option value="Rachel">Rachel</option>
         </select>
+        </form>
       </section>
+      <form>
       <ul>
         {renderFilterQuotes().map(quote => (
           <li> {quote.quote} - {quote.character}</li>
         ))}
       </ul>
+      </form>
+     
     </div>
   );
 }
